@@ -119,18 +119,7 @@ class Client:
                 self.value_X = 0
                 self.value_Y = 0
                 print(f'Value of X: {self.value_X}, Y:{self.value_Y}')
-            
-            elif string == "H":
-                self.goto_origin()
+
             
             else:
                 self.command(string)
-
-    def goto_origin(self):
-        x = -self.value_X
-        y = -self.value_Y
-
-        x=str(x)
-        y=str(y)
-
-        self.command("G01 X"+x+" Y"+y)
