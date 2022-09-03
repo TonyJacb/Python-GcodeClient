@@ -102,24 +102,18 @@ class Client:
         '''
         time.sleep(2)
         self.ser.close()
+        quit()
 
     def manual_mode(self):
         '''
         Use this for sending one command at a time.
         '''
         while True:
-            string = input("Enter your Gcode / Enter q to quit / R to reset /H to origin: ")
+            string = input("Enter your Gcode: ")
             string = string.upper()
             print(string)
             if string == "Q":
                 self.flush()
-                break
-
-            elif string == "R":
-                self.value_X = 0
-                self.value_Y = 0
-                print(f'Value of X: {self.value_X}, Y:{self.value_Y}')
-
             
             else:
                 self.command(string)
